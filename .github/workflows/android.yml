@@ -27,6 +27,8 @@ jobs:
           mkdir -p /tmp/tikview-checks
           javac -d /tmp/tikview-checks app/src/main/java/dev/tikview/UrlPolicy.java checks/UrlPolicyCheck.java
           java -cp /tmp/tikview-checks dev.tikview.UrlPolicyCheck
+      - name: Check active video and comments adapter
+        run: node --test checks/web-adapter.test.cjs
       - name: Install Android platform
         run: sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
       - name: Lint and build installable debug APK
