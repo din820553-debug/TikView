@@ -2,7 +2,7 @@
 
 Отдельный неофициальный клиент веб-версии TikTok для Android 8.0+. Это исходники приложения, а не модифицированный APK TikTok.
 
-**Статус:** исходники подготовлены. Сборка APK, запуск на устройстве и доступ из России ещё не подтверждены. Workflow проверит Java-код, Android Lint и сборку после загрузки в GitHub.
+**Статус:** APK успешно собран в GitHub Actions; Android Lint и 27 проверок URL/прокси прошли. [Скачать APK: Artifacts → TikView-Android](https://github.com/din820553-debug/TikView/actions/runs/38873229741). Запуск на устройстве и доступ из России ещё не подтверждены.
 
 ## Как получить APK через GitHub
 
@@ -58,4 +58,4 @@ javac -d /tmp/tikview-checks app/src/main/java/dev/tikview/UrlPolicy.java checks
 java -cp /tmp/tikview-checks dev.tikview.UrlPolicyCheck
 ```
 
-Эти проверки добавлены в CI, но в исходной облачной среде не запускались: установлен только Java runtime, нет `javac` и SDK; сетевой прокси недоступен.
+Проверки выполнены в GitHub Actions: все 27 случаев прошли, Android Lint и сборка APK завершились успешно. Локальная облачная среда не использовалась для сборки.
